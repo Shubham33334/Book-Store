@@ -22,10 +22,10 @@ router.get('/', async(req, res) => {
     try{
         const data = await Books.find();
         console.log('data fetched Successfully');
-        return res.status(200).json({data});
+        res.status(200).json({data});
     }catch(err){
         console.log(err);
-        return res.status(500).json({error: 'Internal Server Error'});
+        res.status(500).json({error: 'Internal Server Error'});
     }
 });
 
