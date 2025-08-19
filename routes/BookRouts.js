@@ -11,7 +11,7 @@ router.post('/', async(req,res) =>{
         const response = await newBook.save();
 
         console.log('Book is added');
-        res.status(200).json({message : 'Thanks! Your book has been added.'});
+        res.status(201).json({message : 'Thanks! Your book has been added.'});
     }catch(err) {
         console.log(err);
         res.status(500).json({error: 'Internal Server Error'});

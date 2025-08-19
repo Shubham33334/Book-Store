@@ -1,4 +1,3 @@
-const { Mongoose } = require('mongoose');
 const bcrypt = require('bcrypt');
 const mongoose = require('../db');
 
@@ -15,6 +14,13 @@ const PersonScheme = new mongoose.Schema({
         type : String,
         required : true,
     }
+});
+
+PersonScheme.set('toJSON', {
+  transform: function (doc, ret) {
+    delete ret.password;
+    return ret;
+  }
 });
 
 PersonScheme.pre('save', async function (next) {

@@ -11,11 +11,11 @@ db.on('connected', ()=>{
     console.log('Connected to mongoDB server');
 });
 
-db.on('err',()=> {
+db.on('error',(err)=> {
     console.log('MongoDB connection error', err);
 });
 
-db.on('disconned', ()=> {
+db.on('disconnected', ()=> {
     console.log('Disconnected');
 });
 
